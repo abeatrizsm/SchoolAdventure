@@ -12,4 +12,5 @@ func _process(delta):
 
 
 func _on_pressed():
+	Global.livros += 1
 	queue_free()

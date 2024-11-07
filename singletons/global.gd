@@ -1,4 +1,4 @@
 extends Node
 
-
-var livros 
+var HUD_active = false
+var livros = 0

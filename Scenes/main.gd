@@ -43,6 +43,7 @@ var dialog_data = {
 
 
 func _process(delta):
+	await get_tree().create_timer(1.5).timeout
 	if new_dialog == null:
 		new_dialog = dialog_screen.instantiate()
 		new_dialog.data = dialog_data

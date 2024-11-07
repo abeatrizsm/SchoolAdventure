@@ -54,6 +54,7 @@ func _on_area_2d_body_exited(body):
 
 func _process(delta):
 	if Input.is_action_just_pressed("interact") and player_ref != null :
+		#Global.HUD_active = true
 		var item_data: Dictionary = prof_data[prof_level]["item_required"]
 		if player_ref.has_resourse(item_data["item_name"], item_data["item_amount"]):
 			if new_dialog == null:
