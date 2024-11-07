@@ -1,0 +1,36 @@
+[gd_scene load_steps=4 format=3 uid="uid://s805jbwq7hqv"]
+
+[ext_resource type="Script" path="res://Scenes/start_screen.gd" id="1_5bt6q"]
+[ext_resource type="Texture2D" uid="uid://dfhmlg51agyu1" path="res://Assets/Start_screen/Start_screen.png" id="2_ofh4w"]
+[ext_resource type="FontFile" uid="uid://bbl0vymplru8f" path="res://Assets/Fonts/hf-free-complete/hf-free-complete/equipment-pro-v1.1/EquipmentPro.ttf" id="3_epxah"]
+
+[node name="Start_Screen" type="Node"]
+script = ExtResource("1_5bt6q")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_ofh4w")
+
+[node name="Button" type="Button" parent="Control"]
+offset_left = 573.0
+offset_top = 667.0
+offset_right = 710.0
+offset_bottom = 763.0
+theme_override_fonts/font = ExtResource("3_epxah")
+theme_override_font_sizes/font_size = 64
+text = "Start"
+
+[connection signal="pressed" from="Control/Button" to="." method="_on_button_pressed"]
