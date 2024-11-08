@@ -25,6 +25,7 @@ grow_vertical = 2
 texture = ExtResource("2_ofh4w")
 
 [node name="Button" type="Button" parent="Control"]
+layout_mode = 0
 offset_left = 573.0
 offset_top = 667.0
 offset_right = 710.0

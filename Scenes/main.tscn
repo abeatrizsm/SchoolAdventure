@@ -43,8 +43,8 @@
 [ext_resource type="Texture2D" uid="uid://dgjovas7k5feo" path="res://Assets/Modern tiles_Free/Interior/5_Classroom_and_library.png" id="39_nj1sx"]
 [ext_resource type="Script" path="res://Scenes/button.gd" id="40_io76q"]
 [ext_resource type="PackedScene" uid="uid://hy5y6donin2q" path="res://Scenes/professor.tscn" id="41_xxuh4"]
-[ext_resource type="Script" path="res://Scenes/control.gd" id="44_hw5cw"]
 [ext_resource type="FontFile" uid="uid://bbl0vymplru8f" path="res://Assets/Fonts/hf-free-complete/hf-free-complete/equipment-pro-v1.1/EquipmentPro.ttf" id="44_nt6k6"]
+[ext_resource type="Script" path="res://Scenes/ui.gd" id="44_qraww"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_myipi"]
 resource_name = "FloorsPrincipal1"
@@ -15318,22 +15318,14 @@ script = ExtResource("40_io76q")
 [node name="Dialogs" type="Node2D" parent="."]
 
 [node name="UI" type="CanvasLayer" parent="."]
-visible = false
+script = ExtResource("44_qraww")
 
-[node name="Control" type="Control" parent="UI"]
-layout_mode = 3
+[node name="MarginContainer" type="MarginContainer" parent="UI"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-script = ExtResource("44_hw5cw")
-
-[node name="MarginContainer" type="MarginContainer" parent="UI/Control"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+offset_right = -1033.0
+offset_bottom = -657.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_left = 16
@@ -15341,20 +15333,21 @@ theme_override_constants/margin_top = 16
 theme_override_constants/margin_right = 16
 theme_override_constants/margin_bottom = 16
 
-[node name="HBoxContainer" type="HBoxContainer" parent="UI/Control/MarginContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/MarginContainer"]
 layout_mode = 2
 size_flags_vertical = 0
 
-[node name="icon" type="TextureRect" parent="UI/Control/MarginContainer/HBoxContainer"]
+[node name="icon" type="TextureRect" parent="UI/MarginContainer/HBoxContainer"]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 texture = SubResource("AtlasTexture_dd2bm")
 expand_mode = 2
 
-[node name="Label" type="Label" parent="UI/Control/MarginContainer/HBoxContainer"]
+[node name="Label" type="Label" parent="UI/MarginContainer/HBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("44_nt6k6")
 theme_override_font_sizes/font_size = 64
+text = "x 00"
 
 [connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
 [connection signal="pressed" from="Button2" to="Button2" method="_on_pressed"]
